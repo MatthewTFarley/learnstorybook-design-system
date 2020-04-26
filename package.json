@@ -1,7 +1,11 @@
 {
-  "name": "learnstorybook-design-system",
+  "name": "matthewtfarley-learnstorybook-design-system",
   "version": "0.1.0",
-  "private": true,
+  "description": "Learn Storybook design system",
+  "main": "dist/index.js",
+  "repository": "git@github.com:MatthewTFarley/learnstorybook-design-system.git",
+  "author": "Matthew Farley <matthewthomasfarley@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -16,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
@@ -39,7 +43,13 @@
       "last 1 safari version"
     ]
   },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@storybook/addon-a11y": "^5.3.18",
     "@storybook/addon-actions": "^5.3.18",
@@ -52,7 +62,9 @@
     "@storybook/react": "^5.3.18",
     "@storybook/source-loader": "^5.3.18",
     "@testing-library/dom": "^7.2.2",
+    "auto": "^9.30.2",
     "babel-loader": "^8.1.0",
+    "cross-env": "^7.0.2",
     "prettier": "^2.0.5",
     "regenerator-runtime": "^0.13.5",
     "typescript": "^3.8.3"
